@@ -1,0 +1,22 @@
+version: 0.0.0.{build}
+
+clone_depth: 1
+
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      BUILD_SCRIPT: ./build-rpi.sh
+
+install:
+  - sh: 'sudo apt update'
+  - sh: 'sudo apt install -y qemu binfmt-support qemu-user-static'
+  - sh: 'docker run --rm --privileged multiarch/qemu-user-static --reset -p yes'
+
+build_script:
+  - sh: 'sh -c $BUILD_SCRIPT'
+
+after_build:
+  - sh: 'appveyor PushArtifact out_*/moonlight-embedded_*.deb'
+  - sh: 'appveyor PushArtifact out_*/moonlight-embedded-dbgsym_*.deb'
+
+deploy: off
