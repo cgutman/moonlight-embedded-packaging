@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Cameron Gutman <cameron@moonlight-stream.org>
 Build-Depends: debhelper (>= 8.0.0), cmake, uuid-dev, libopus-dev, libexpat1-dev, libasound2-dev, libudev-dev, libavahi-client-dev, libssl-dev, libcurl4-openssl-dev, libevdev-dev, libcec-dev, libp8-platform-dev, libraspberrypi-dev | rbp-userland-dev-osmc
 Standards-Version: 3.9.3
-Homepage: https://github.com/irtimmer/moonlight-embedded
+Homepage: https://github.com/moonlight-stream/moonlight-embedded
 
 Package: moonlight-embedded
 Architecture: armhf
@@ -13,4 +13,4 @@ Recommends: alsa-base
 Suggests: alsa-utils
 Description: GameStream client for Linux
  Game streaming client for Nvidia's GameStream.
- Stream games from your Windows computer with Nvidia graphic card to your linux box.
+ Stream games from your Windows computer with Nvidia graphics card to your Linux box.
