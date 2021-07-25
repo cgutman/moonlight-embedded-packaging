@@ -20,7 +20,7 @@ moonlight-embedded (2.4.4-1stretch1) UNRELEASED; urgency=medium
 
   * Rebuild for Stretch
 
- -- root <root@debian-stretch>  Fri, 03 Nov 2017 22:07:21 +0000
+ -- Iwan Timmer <irtimmer@gmail.com>  Fri, 03 Nov 2017 22:07:21 +0000
 
 moonlight-embedded (2.4.3-1jessie1) RELEASED; urgency=medium
 
@@ -111,7 +111,7 @@ moonlight-embedded (2.1.0-1) RELEASED; urgency=low
   * Support OSMC
   * Update Moonlight-embedded to version 2.1.0
 
- -- Iwan Timmer <irtimmer@gmail.com>  Fri, 14 Aug 2015 16:13:67 +0200
+ -- Iwan Timmer <irtimmer@gmail.com>  Fri, 14 Aug 2015 16:14:07 +0200
 
 moonlight-embedded (2.0.2-1) RELEASED; urgency=medium
 
