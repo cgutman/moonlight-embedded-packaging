@@ -1,7 +1,7 @@
 set -e
 
 # FIXME: Avoid hardcoding this
-VERSION="2.4.11"
+VERSION="2.5.0"
 
 # Check out the source
 [[ ! -z "$COMMIT" ]] || COMMIT="master"
