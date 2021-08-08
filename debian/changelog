@@ -1,3 +1,9 @@
+moonlight-embedded (2.5.1-1) RELEASED; urgency=medium
+
+  * Update to version 2.5.1
+
+ -- Cameron Gutman <aicommander@gmail.com>  Mon, 9 Aug 2021 17:09:00 +0000
+
 moonlight-embedded (2.5.0-1) RELEASED; urgency=medium
 
   * Update to version 2.5.0
