@@ -1,16 +1,16 @@
 set -e
 
-# FIXME: Avoid hardcoding this
-VERSION="2.5.0"
-
 # Check out the source
 [[ ! -z "$COMMIT" ]] || COMMIT="master"
 echo "Checking out $COMMIT"
-git clone https://github.com/irtimmer/moonlight-embedded.git
+git clone https://github.com/moonlight-stream/moonlight-embedded.git
 cd moonlight-embedded
 git checkout $COMMIT
 git log -1
 git submodule update --init --recursive
+
+# Pull the version out of the CMakeLists.txt
+VERSION=$(cat CMakeLists.txt | grep project\( | cut -d ' ' -f 3)
 
 # Create a build directory
 mkdir /opt/build
