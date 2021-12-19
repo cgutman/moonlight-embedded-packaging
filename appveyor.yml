@@ -5,7 +5,9 @@ clone_depth: 1
 environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
-      BUILD_SCRIPT: ./build-rpi.sh
+      BUILD_SCRIPT: ./build-rpi-buster.sh
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      BUILD_SCRIPT: ./build-rpi-bullseye.sh
 
 install:
   - sh: 'sudo apt update'
