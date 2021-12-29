@@ -8,6 +8,8 @@ environment:
       BUILD_SCRIPT: ./build-rpi-buster.sh
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
       BUILD_SCRIPT: ./build-rpi-bullseye.sh
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
+      BUILD_SCRIPT: ./build-rpi-bullseye64.sh
 
 install:
   - sh: 'sudo apt update'
