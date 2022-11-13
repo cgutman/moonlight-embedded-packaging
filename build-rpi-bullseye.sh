@@ -18,7 +18,7 @@ if [ $PULL_EXIT_CODE -eq 0 ]; then
   echo Using pre-built Docker image - $DOCKERIMAGE:$TAG_NAME
 else
   echo Pre-built image not available - building $DOCKERIMAGE:$TAG_NAME
-  docker build -f $DOCKERFILE -t $DOCKERIMAGE:$TAG_NAME .
+  docker build --pull -f $DOCKERFILE -t $DOCKERIMAGE:$TAG_NAME .
   echo Built Docker image - $DOCKERIMAGE:$TAG_NAME
 fi
 
