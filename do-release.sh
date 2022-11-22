@@ -12,9 +12,10 @@ set -e
 ./push-images.sh
 
 # Build the packages
-./build-rpi-buster.sh
-./build-rpi-bullseye.sh
-./build-rpi-bullseye64.sh
+./build-rpi-buster.sh &
+./build-rpi-bullseye.sh &
+./build-rpi-bullseye64.sh &
+wait
 
 # Push the moonlight-embedded packages to Cloudsmith repos
 cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/buster out_rpi-buster/moonlight-embedded_*.deb
