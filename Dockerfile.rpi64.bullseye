@@ -1,5 +1,8 @@
 FROM arm64v8/debian:bullseye
 
+ENV TARGET=rpi64
+ENV DISTRO=bullseye
+
 COPY scripts/install-base-deps.sh /opt/scripts/
 RUN /bin/bash -c /opt/scripts/install-base-deps.sh && \
     apt-get install -y --no-install-recommends gnupg && \

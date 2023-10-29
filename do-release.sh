@@ -14,15 +14,15 @@ set -e
 # Build the packages
 ./build-rpi-buster.sh &
 ./build-rpi-bullseye.sh &
-./build-rpi-bullseye64.sh &
+./build-rpi64-bullseye.sh &
 wait
 
 # Push the moonlight-embedded packages to Cloudsmith repos
 cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/buster out_rpi-buster/moonlight-embedded_*.deb
 cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/bullseye out_rpi-bullseye/moonlight-embedded_*.deb
-cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/bullseye out_rpi-bullseye64/moonlight-embedded_*.deb
+cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/bullseye out_rpi64-bullseye/moonlight-embedded_*.deb
 
 # Push the moonlight-embedded-dbgsym packages to Cloudsmith repos
 cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/buster out_rpi-buster/moonlight-embedded-dbgsym_*.deb
 cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/bullseye out_rpi-bullseye/moonlight-embedded-dbgsym_*.deb
-cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/bullseye out_rpi-bullseye64/moonlight-embedded-dbgsym_*.deb
+cloudsmith push deb moonlight-game-streaming/moonlight-embedded/raspbian/bullseye out_rpi64-bullseye/moonlight-embedded-dbgsym_*.deb

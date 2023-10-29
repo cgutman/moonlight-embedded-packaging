@@ -9,7 +9,7 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
       BUILD_SCRIPT: ./build-rpi-bullseye.sh
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
-      BUILD_SCRIPT: ./build-rpi-bullseye64.sh
+      BUILD_SCRIPT: ./build-rpi64-bullseye.sh
 
 install:
   - sh: 'sudo apt update'

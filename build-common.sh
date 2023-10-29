@@ -1,7 +1,3 @@
-TARGET_NAME="rpi-bullseye64"
-DOCKERIMAGE="cgutman/moonlight-embedded-packaging"
-DOCKERFILE="Dockerfile.rpi.bullseye64"
-
 TAG_UNIQUE_ID=`git ls-tree HEAD | sha256sum | cut -c-16`
 TAG_NAME="${TARGET_NAME}_${TAG_UNIQUE_ID}"
 OUT_DIR="out_$TARGET_NAME"
