@@ -1,7 +1,7 @@
 FROM arm32v7/debian:bullseye
 
 ENV TARGET=rpi
-ENV DISTRO=bullsye
+ENV DISTRO=bullseye
 
 COPY scripts/install-base-deps.sh /opt/scripts/
 RUN /bin/bash -c /opt/scripts/install-base-deps.sh && \
