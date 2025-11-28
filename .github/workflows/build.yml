@@ -20,11 +20,19 @@ jobs:
             target: rpi
 
           - os: ubuntu-24.04-arm
+            distro: trixie
+            target: rpi
+
+          - os: ubuntu-24.04-arm
             distro: bullseye
             target: rpi64
 
           - os: ubuntu-24.04-arm
             distro: bookworm
+            target: rpi64
+
+          - os: ubuntu-24.04-arm
+            distro: trixie
             target: rpi64
 
     runs-on: ${{ matrix.os }}

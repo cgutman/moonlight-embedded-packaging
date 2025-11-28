@@ -13,10 +13,15 @@ TAG_UNIQUE_ID=`git ls-tree HEAD | sha256sum | cut -c-16`
 ./build-image.sh rpi bullseye $TAG_UNIQUE_ID &
 ./build-image.sh rpi64 bullseye $TAG_UNIQUE_ID &
 ./build-image.sh rpi bookworm $TAG_UNIQUE_ID &
+wait
 ./build-image.sh rpi64 bookworm $TAG_UNIQUE_ID &
+./build-image.sh rpi trixie $TAG_UNIQUE_ID &
+./build-image.sh rpi64 trixie $TAG_UNIQUE_ID &
 wait
 
 docker push cgutman/moonlight-embedded-packaging:rpi-bullseye_$TAG_UNIQUE_ID
 docker push cgutman/moonlight-embedded-packaging:rpi64-bullseye_$TAG_UNIQUE_ID
 docker push cgutman/moonlight-embedded-packaging:rpi-bookworm_$TAG_UNIQUE_ID
 docker push cgutman/moonlight-embedded-packaging:rpi64-bookworm_$TAG_UNIQUE_ID
+docker push cgutman/moonlight-embedded-packaging:rpi-trixie_$TAG_UNIQUE_ID
+docker push cgutman/moonlight-embedded-packaging:rpi64-trixie_$TAG_UNIQUE_ID

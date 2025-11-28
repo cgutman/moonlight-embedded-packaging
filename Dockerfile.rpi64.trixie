@@ -1,0 +1,19 @@
+FROM arm64v8/debian:trixie
+
+ENV TARGET=rpi64
+ENV DISTRO=trixie
+
+COPY scripts/install-base-deps.sh /opt/scripts/
+RUN /bin/bash -c /opt/scripts/install-base-deps.sh && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY rpi-userland /opt/rpi-userland
+COPY scripts/build-rpi-userland.sh /opt/scripts/
+RUN /bin/bash -c /opt/scripts/build-rpi-userland.sh
+
+COPY scripts/git-archive-all.sh /opt/scripts/
+COPY scripts/build-package.sh /opt/scripts/
+
+VOLUME "/out"
+ENTRYPOINT [ "/bin/bash", "-c", "/opt/scripts/build-package.sh" ]
