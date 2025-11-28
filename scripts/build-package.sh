@@ -13,8 +13,8 @@ git submodule update --init --recursive
 VERSION=$(cat CMakeLists.txt | grep project\( | cut -d ' ' -f 3)
 
 # Determine extra distro-specific dependencies
-if [ "$TARGET" != "rpi64" ] && [ "$DISTRO" != "bookworm" ]; then
-   # MMAL is only packaged for 32-bit Buster and Bullseye
+if [ "$TARGET" == "rpi" ] && [ "$DISTRO" == "bullseye" ]; then
+   # MMAL is only packaged for 32-bit Bullseye
    EXTRA_BUILD_DEPS="libraspberrypi-dev | rbp-userland-dev-osmc"
    EXTRA_DEPS="libraspberrypi0 | rbp-userland-osmc"
 else
