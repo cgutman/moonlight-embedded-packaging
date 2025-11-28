@@ -12,11 +12,11 @@ set -e
 ./push-images.sh
 
 # Build the packages
-./build-rpi-buster.sh &
-./build-rpi-bullseye.sh &
-./build-rpi64-bullseye.sh &
-./build-rpi-bookworm.sh &
-./build-rpi64-bookworm.sh &
+./build-single.sh rpi buster $1 &
+./build-single.sh rpi bullseye $1 &
+./build-single.sh rpi64 bullseye $1 &
+./build-single.sh rpi bookworm $1 &
+./build-single.sh rpi64 bookworm $1 &
 wait
 
 # Push the moonlight-embedded packages to Cloudsmith repos
