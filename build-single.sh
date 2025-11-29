@@ -22,7 +22,7 @@ else
   echo Built Docker image - cgutman/moonlight-embedded-packaging:$TAG_NAME
 fi
 
-docker run --rm --mount type=bind,source="$(pwd)"/$OUT_DIR,target=/out --mount type=bind,source="$(pwd)"/debian,target=/opt/debian -e COMMIT="$3" cgutman/moonlight-embedded-packaging:$TAG_NAME
+docker run --rm --mount type=bind,source="$(pwd)"/$OUT_DIR,target=/out --mount type=bind,source="$(pwd)"/debian,target=/opt/debian -e COMMIT="$3" -e REPO_URL="$REPO_URL" cgutman/moonlight-embedded-packaging:$TAG_NAME
 
 # Push the image now if we're building master in GitHub Actions
 if [ $PULL_EXIT_CODE -ne 0 ] && [ "$GITHUB_REF" == "refs/heads/master" ]; then

@@ -1,9 +1,10 @@
 set -e
 
 # Check out the source
+[[ ! -z "$REPO_URL" ]] || REPO_URL="https://github.com/moonlight-stream/moonlight-embedded.git"
 [[ ! -z "$COMMIT" ]] || COMMIT="master"
-echo "Checking out $COMMIT"
-git clone https://github.com/moonlight-stream/moonlight-embedded.git
+echo "Checking out $COMMIT in $REPO_URL"
+git clone $REPO_URL
 cd moonlight-embedded
 git checkout $COMMIT
 git log -1
