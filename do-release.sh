@@ -8,9 +8,6 @@ git diff-index --quiet HEAD -- || fail "Release builds must not have unstaged ch
 
 set -e
 
-# Ensure build images are pushed to DockerHub
-./push-images.sh
-
 # Build the packages
 ./build-single.sh rpi bullseye $1 &
 ./build-single.sh rpi64 bullseye $1 &
